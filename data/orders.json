@@ -1,1 +1,9 @@
-[]
+{
+  "id": 1,
+  "customer": "dan",
+  "table": 5,
+  "dishesList": [
+    "water"
+  ],
+  "status": "NEW"
+}
