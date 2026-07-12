@@ -20,8 +20,15 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
+    const filter = req.query
     const allOrders = await readData();
-    res.send(allOrders);
+    const filterdOrders = allOrders.filter(order => {
+        for (const key in filter) {
+            if (order[key] === filter[key]) return true
+            return false
+        }
+    })
+    res.send(filterdOrders);
 });
 
 router.get("/:id", validateID, (req, res) => {
