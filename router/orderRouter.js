@@ -5,8 +5,8 @@ import validateID from "../middlewares/validateID.js"
 const router = express.Router()
 
 router.post("/", async (req, res) => {
-    const allOrders = await readData()
     const {customer, table, dishesList} = req.body
+    const allOrders = await readData()
     const newOrder = {
         id: Math.max(0, ...allOrders.map(o => o.id)) + 1,
         customer: customer,
@@ -28,7 +28,19 @@ router.get("/:id", validateID, (req, res) => {
     res.send(order)
 })
 
-// router.put("/:id")
+router.put("/:id", validateID, (req, res) => {
+    const {customer, table, dishesList} = req.body
+    if (!customer || !table || !dishesList) {
+        return res.status(400).send("body field missing")
+    }
+    const id = req.params.id
+    const allOrders = readData()
+    const order = allOrders.find(order => order.id === +id)
+    Object.assign(order, {customer, table, dishesList}) 
+    writeData(allOrders)
+
+    res.send(`Order ${id} updated`)
+})
 
 // router.delete("/:id")
 
