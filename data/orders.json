@@ -1,9 +1,32 @@
-[{
-  "id": 1,
-  "customer": "dan",
-  "table": 5,
-  "dishesList": [
-    "water"
-  ],
-  "status": "NEW"
-}]
+[
+  {
+    "id": 1,
+    "customer": "daniel",
+    "table": 6,
+    "dishesList": [
+      "water",
+      "orange"
+    ],
+    "status": "NEW"
+  },
+  {
+    "id": 2,
+    "customer": "daniel",
+    "table": 6,
+    "dishesList": [
+      "water",
+      "orange"
+    ],
+    "status": "CANCELLED"
+  },
+  {
+    "id": 3,
+    "customer": "daniel",
+    "table": 6,
+    "dishesList": [
+      "water",
+      "orange"
+    ],
+    "status": "NEW"
+  }
+]
