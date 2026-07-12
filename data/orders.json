@@ -1,4 +1,4 @@
-{
+[{
   "id": 1,
   "customer": "dan",
   "table": 5,
@@ -6,4 +6,4 @@
     "water"
   ],
   "status": "NEW"
-}
+}]

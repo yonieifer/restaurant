@@ -1,4 +1,4 @@
-import { readData } from "../data/dataAccess"
+import { readData } from "../data/dataAccess.js"
 
 export default async (req, res, next) => {
     if (!req.params.id) {
