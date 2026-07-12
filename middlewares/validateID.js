@@ -10,5 +10,6 @@ export default async (req, res, next) => {
     if (!order) {
         res.status(401).send(`Order ${id} not found`)
     }
+    req.order = order
     next()
 }
