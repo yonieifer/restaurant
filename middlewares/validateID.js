@@ -1,0 +1,14 @@
+import { readData } from "../data/dataAccess"
+
+export default async (req, res, next) => {
+    if (!req.params.id) {
+        res.status(400).send("no ID")
+    }
+    const id = req.params.id
+    const allOrders = await readData()
+    const order = allOrders.find(order => order.id === +id)
+    if (!order) {
+        res.status(401).send(`Order ${id} not found`)
+    }
+    next()
+}
